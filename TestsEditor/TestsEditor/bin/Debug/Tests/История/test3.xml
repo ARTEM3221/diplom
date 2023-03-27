@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test>
+  <Theme>итог</Theme>
+  <qw numbers="2">
+    <q1 text="вапваи" right="тогньен">
+      <answers>System.Windows.Forms.TextBox, Text: апиат|System.Windows.Forms.TextBox, Text: jmjhm|System.Windows.Forms.TextBox, Text: sdfdsv|System.Windows.Forms.TextBox, Text: тогньен</answers>
+    </q1>
+    <q2 text="енрен" right="hjj">
+      <answers>System.Windows.Forms.TextBox, Text: jmhgm|System.Windows.Forms.TextBox, Text: ghn|System.Windows.Forms.TextBox, Text: hjm|System.Windows.Forms.TextBox, Text: ghnf</answers>
+    </q2>
+  </qw>
+</test>

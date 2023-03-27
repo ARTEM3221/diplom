@@ -1,0 +1,43 @@
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\bin\Debug\TestsEditor.exe.config
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\bin\Debug\TestsEditor.exe
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\bin\Debug\TestsEditor.pdb
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.AssemblyReference.cache
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.SuggestedBindingRedirects.cache
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.HelloForm.resources
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.Properties.Resources.resources
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.QwestForm.resources
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.GenerateResource.cache
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.CoreCompileInputs.cache
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.CopyComplete
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.exe
+C:\Users\archi\OneDrive\Desktop\беккап\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.pdb
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\bin\Debug\TestsEditor.exe.config
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\bin\Debug\TestsEditor.exe
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\bin\Debug\TestsEditor.pdb
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.AssemblyReference.cache
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.SuggestedBindingRedirects.cache
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.HelloForm.resources
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.Properties.Resources.resources
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.QwestForm.resources
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.GenerateResource.cache
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.CoreCompileInputs.cache
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.CopyComplete
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.exe
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.pdb
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\bin\Debug\Newtonsoft.Json.dll
+C:\Users\archi\OneDrive\Desktop\TestsEditor\TestsEditor\bin\Debug\Newtonsoft.Json.xml
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.AssemblyReference.cache
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.SuggestedBindingRedirects.cache
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.HelloForm.resources
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.Properties.Resources.resources
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.QwestForm.resources
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.GenerateResource.cache
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.CoreCompileInputs.cache
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.exe
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.pdb
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\bin\Debug\TestsEditor.exe.config
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\bin\Debug\TestsEditor.exe
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\bin\Debug\TestsEditor.pdb
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\bin\Debug\Newtonsoft.Json.dll
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\bin\Debug\Newtonsoft.Json.xml
+C:\Users\archi\OneDrive\Desktop\Нова папка (2)\TestsEditor\TestsEditor\obj\x86\Debug\TestsEditor.csproj.CopyComplete

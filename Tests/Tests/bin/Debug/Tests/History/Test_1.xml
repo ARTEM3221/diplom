@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+
+<test>
+	<Theme>Тестирование по истории</Theme>
+	
+	<qw numbers="3">
+		<q1 text="Кто таакой-то царь?" right="Он">
+			<answers>Он|Не знаю|Она|Оно</answers>
+		</q1>
+		
+		<q2 text="2+2:" right="4">
+			<answers>4|0|100500|234</answers>
+		</q2>
+		
+		<q3 text="432424324*(5443^12+342^):" right="Не знаю">
+			<answers>Не знаю|много|оень много|sdf</answers>
+		</q3>
+	</qw>
+</test>

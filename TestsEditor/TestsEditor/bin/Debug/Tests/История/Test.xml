@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<test>
+  <Theme>итог</Theme>
+  <qw numbers="4">
+    <q1 text="ваапиа" right="отот">
+      <answers>System.Windows.Forms.TextBox, Text: апиапи|System.Windows.Forms.TextBox, Text: апиапи|System.Windows.Forms.TextBox, Text: апиава|System.Windows.Forms.TextBox, Text: отот</answers>
+      <q2 text="апвиап" right="jmuuyt">
+        <answers>System.Windows.Forms.TextBox, Text: вапиапи|System.Windows.Forms.TextBox, Text: аитьонбьф|System.Windows.Forms.TextBox, Text: sdvdfhn|System.Windows.Forms.TextBox, Text: jmuuyt</answers>
+        <q3 text="dsgbhhnjh,gjmdhndfgn" right="3">
+          <answers>System.Windows.Forms.TextBox, Text: fgb|System.Windows.Forms.TextBox, Text: птекн|System.Windows.Forms.TextBox, Text: 3|System.Windows.Forms.TextBox, Text: нронг</answers>
+          <q4 text="Вопрос 4" right="ответ 2">
+            <answers>System.Windows.Forms.TextBox, Text: ответ 1|System.Windows.Forms.TextBox, Text: ответ 2|System.Windows.Forms.TextBox, Text:  ответ 3|System.Windows.Forms.TextBox, Text: ответ4 </answers>
+          </q4>
+        </q3>
+      </q2>
+    </q1>
+  </qw>
+</test>
