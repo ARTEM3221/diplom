@@ -16,3 +16,21 @@ C:\Users\archi\OneDrive\Desktop\Tests\Tests\obj\x86\Release\Tests.csproj.CoreCom
 C:\Users\archi\OneDrive\Desktop\Tests\Tests\obj\x86\Release\Tests.csproj.CopyComplete
 C:\Users\archi\OneDrive\Desktop\Tests\Tests\obj\x86\Release\Tests.exe
 C:\Users\archi\OneDrive\Desktop\Tests\Tests\obj\x86\Release\Tests.pdb
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\bin\Release\Tests.exe.config
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\bin\Release\Tests.exe
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\bin\Release\Tests.pdb
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\bin\Release\Check.dll
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\bin\Release\mark.dll
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\bin\Release\Newtonsoft.Json.dll
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\bin\Release\Newtonsoft.Json.xml
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\obj\x86\Release\Tests.csproj.AssemblyReference.cache
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\obj\x86\Release\Tests.csproj.SuggestedBindingRedirects.cache
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\obj\x86\Release\Tests.FinalForm.resources
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\obj\x86\Release\Tests.LoadForm.resources
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\obj\x86\Release\Tests.MainForm.resources
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\obj\x86\Release\Tests.Properties.Resources.resources
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\obj\x86\Release\Tests.csproj.GenerateResource.cache
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\obj\x86\Release\Tests.csproj.CoreCompileInputs.cache
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\obj\x86\Release\Tests.csproj.CopyComplete
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\obj\x86\Release\Tests.exe
+C:\Users\archi\OneDrive\Desktop\Нова папка\диплом\Tests\Tests\obj\x86\Release\Tests.pdb

@@ -55,7 +55,7 @@ namespace Tests
                     if (response.IsSuccessStatusCode)
                     {
                         var responseContent = await response.Content.ReadAsStringAsync();
-                        
+                        MessageBox.Show($"Result saved successfully. Server response: {responseContent}", "Success");
                     }
                     else
                     {

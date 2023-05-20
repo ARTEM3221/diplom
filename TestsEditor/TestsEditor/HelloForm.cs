@@ -101,7 +101,7 @@ namespace TestsEditor
             testWriter.WriteEndElement();
             testWriter.WriteEndElement();
             testWriter.WriteEndDocument();
-            testWriter.Flush(); 
+            testWriter.Flush(); // Замініть 'testWriter.Close();' на 'testWriter.Flush();'
         }
 
         private Dictionary<string, string> _folderMapping = new Dictionary<string, string>();
