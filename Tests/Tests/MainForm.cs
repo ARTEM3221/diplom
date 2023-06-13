@@ -10,7 +10,6 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-
 namespace Tests
 {
     public partial class MainForm : Form
@@ -25,16 +24,14 @@ namespace Tests
         private int testDuration;
         private CancellationTokenSource timerCancellationTokenSource;
         public int CorrectAnswers => correctAnswers;
-        
 
-        // Constructor
+        // Конструктор
         public MainForm(string xmlPath)
         {
             InitializeComponent();
             this.xmlPath = xmlPath;
             LoadTestAsync(xmlPath);
-            
-    }
+        }
 
         public string TestUrl { get; set; }
         public string TestTheme { get; set; }
@@ -42,7 +39,7 @@ namespace Tests
         public int Questions { get; private set; }
         public string PersonName { get; set; }
 
-        // Async method for loading test data from XML
+        // Асинхронний метод для завантаження даних тесту з XML
         private async void LoadTestAsync(string xmlPath)
         {
             using (HttpClient httpClient = new HttpClient())
@@ -52,7 +49,7 @@ namespace Tests
                 xmlDoc.LoadXml(testXml);
             }
 
-            // Read the test theme
+            // Отримання теми тесту
             XmlNode themeNode = xmlDoc.SelectSingleNode("/test/Theme");
             string testTheme = themeNode?.InnerText ?? "";
             this.TestTheme = testTheme;
@@ -62,7 +59,7 @@ namespace Tests
             currentQuestion = 0;
             correctAnswers = 0;
 
-            Theme = xmlDoc.SelectSingleNode("/test/Theme")?.InnerText ?? "Unknown";
+            Theme = xmlDoc.SelectSingleNode("/test/Theme")?.InnerText ?? "Невідомо";
             Questions = questions.Count;
 
             DisplayQuestion(currentQuestion);
@@ -71,12 +68,12 @@ namespace Tests
             int testDurationInMinutes;
             if (int.TryParse(durationNode?.InnerText, out testDurationInMinutes))
             {
-                // Calculate hours, minutes, and seconds from minutes
+                // Розрахунок годин, хвилин і секунд на основі хвилин
                 int hours = testDurationInMinutes / 60;
                 int minutes = testDurationInMinutes % 60;
                 int seconds = 0;
 
-                // Create a DateTime object with the calculated values
+                // Створення об'єкту TimeSpan з розрахованими значеннями
                 TimeSpan testDuration = new TimeSpan(hours, minutes, seconds);
 
                 if (testDuration > TimeSpan.Zero)
@@ -87,7 +84,7 @@ namespace Tests
             }
         }
 
-        // Display the question based on index
+        // Відображення питання за індексом
         private void DisplayQuestion(int questionIndex)
         {
             XmlNode questionNode = questions[questionIndex];
@@ -110,10 +107,10 @@ namespace Tests
             cbAnswer4.Checked = false;
         }
 
-        // Method to check and count the answer
+        // Метод для перевірки та підрахунку відповіді
         private void CheckAnswer()
         {
-            // Collect the selected answers
+            // Збираємо вибрані відповіді
             List<string> selectedAnswers = new List<string>();
             if (cbAnswer1.Checked) selectedAnswers.Add(cbAnswer1.Text);
             if (cbAnswer2.Checked) selectedAnswers.Add(cbAnswer2.Text);
@@ -124,24 +121,24 @@ namespace Tests
 
             bool isAnswerCorrect;
 
-            if (rightAnswer == "") // If there is no correct answer
+            if (rightAnswer == "") // Якщо немає правильної відповіді
             {
-                // If the user did not select any answers, then it is correct
+                // Якщо користувач не вибрав жодної відповіді, то вона є правильною
                 isAnswerCorrect = selectedAnswers.Count == 0;
             }
             else
             {
-                // If there are correct answers, then we check them as before
+                // Якщо є правильні відповіді, то ми перевіряємо їх як раніше
                 isAnswerCorrect = selectedAnswers.Count == correctAnswersArray.Length && selectedAnswers.All(answer => correctAnswersArray.Contains(answer));
             }
 
             if (isAnswerCorrect) correctAnswers++;
 
-            // Save the user's answer for the current question
+            // Збереження відповіді користувача для поточного питання
             userAnswers[currentQuestion] = string.Join("|", selectedAnswers);
         }
 
-        // Method to restore the user's saved answer for the current question
+        // Метод для відновлення збереженої відповіді користувача для поточного питання
         private void RestoreUserAnswers(int questionIndex)
         {
             string[] selectedAnswers = userAnswers[questionIndex]?.Split('|');
@@ -151,91 +148,67 @@ namespace Tests
             cbAnswer4.Checked = selectedAnswers?.Contains(cbAnswer4.Text) ?? false;
         }
 
-
-        // Handle the event of clicking the "Next" button
+        // Обробка події натискання кнопки "Далі"
         private void btnNext_Click(object sender, EventArgs e)
         {
-            // Check and count the answer
+            // Перевірка та підрахунок відповіді
             CheckAnswer();
 
             if (currentQuestion < questions.Count - 1)
             {
-                // Increase the current question index and display the next question
+                // Збільшення індексу поточного питання та відображення наступного питання
                 currentQuestion++;
                 DisplayQuestion(currentQuestion);
 
-                // Restore the user's saved answer for the current question
+                // Відновлення збереженої відповіді користувача для поточного питання
                 RestoreUserAnswers(currentQuestion);
 
-                // Disable the "Next" button if this is the last question
+                // Вимкнення кнопки "Далі", якщо це останнє питання
                 btnNext.Enabled = currentQuestion < questions.Count - 1;
             }
             else
             {
-                // If it was the last question, then finish the test
+                // Якщо це останнє питання, завершити тест
                 EndTest();
             }
 
-            // Enable the "Back" button if the user is no longer on the first question
+            // Увімкнення кнопки "Назад", якщо користувач не перебуває на першому питанні
             backButton.Enabled = currentQuestion > 0;
-            // Collect the selected answers
-            List<string> selectedAnswers = new List<string>();
-            if (cbAnswer1.Checked) selectedAnswers.Add(cbAnswer1.Text);
-            if (cbAnswer2.Checked) selectedAnswers.Add(cbAnswer2.Text);
-            if (cbAnswer3.Checked) selectedAnswers.Add(cbAnswer3.Text);
-            if (cbAnswer4.Checked) selectedAnswers.Add(cbAnswer4.Text);
-
-            string[] correctAnswersArray = rightAnswer.Split('|');
-
-            bool isAnswerCorrect;
-
-            if (rightAnswer == "") // If there is no correct answer
-            {
-                // If the user did not select any answers, then it is correct
-                isAnswerCorrect = selectedAnswers.Count == 0;
-            }
-            else
-            {
-                // If there are correct answers, then we check them as before
-                isAnswerCorrect = selectedAnswers.Count == correctAnswersArray.Length && selectedAnswers.All(answer => correctAnswersArray.Contains(answer));
-            }
-
-            if (isAnswerCorrect) correctAnswers++;
         }
 
-       
+        // Обробка події закриття форми
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-       
 
-        // Handle the event of clicking the "Exit" button
+        // Обробка події натискання кнопки "Вихід"
         private void button1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        // Handle the event of clicking the "Back" button
+        // Обробка події натискання кнопки "Назад"
         private void backButton_Click(object sender, EventArgs e)
         {
             if (currentQuestion > 0)
             {
-                // Decrease the current question index and display the previous question
+                // Зменшення індексу поточного питання та відображення попереднього питання
                 currentQuestion--;
                 DisplayQuestion(currentQuestion);
 
-                // Restore the user's saved answer for the current question
+                // Відновлення збереженої відповіді користувача для поточного питання
                 RestoreUserAnswers(currentQuestion);
 
-                // Disable the "Back" button if the user is back at the first question
+                // Вимкнення кнопки "Назад", якщо користувач повернувся на перше питання
                 backButton.Enabled = currentQuestion > 0;
             }
 
-            // Enable the "Next" button if the user is no longer on the last question
+            // Увімкнення кнопки "Далі", якщо користувач не перебуває на останньому питанні
             btnNext.Enabled = currentQuestion < questions.Count - 1;
         }
 
+        // Асинхронний метод для запуску таймера
         private async void StartTimer(TimeSpan duration, CancellationToken cancellationToken)
         {
             try
@@ -259,11 +232,11 @@ namespace Tests
             }
             catch (OperationCanceledException)
             {
-                // Timer was canceled, do nothing.
+                // Таймер був скасований, нічого не робимо.
             }
         }
 
-        // Method to end the test when the time is up
+        // Метод для завершення тесту, коли час вийшов або всі питання відповідано
         private void EndTest()
         {
             Form finalForm = new FinalForm(PersonName, TestTheme, questions.Count, correctAnswers);

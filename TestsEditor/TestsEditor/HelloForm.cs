@@ -8,14 +8,12 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Net;
 using System.Text.RegularExpressions;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace TestsEditor
 {
     public partial class HelloForm : Form
     {
         XmlTextWriter testWriter;
-
         public HelloForm()
         {
             InitializeComponent();
@@ -101,7 +99,7 @@ namespace TestsEditor
             testWriter.WriteEndElement();
             testWriter.WriteEndElement();
             testWriter.WriteEndDocument();
-            testWriter.Flush(); // Замініть 'testWriter.Close();' на 'testWriter.Flush();'
+            testWriter.Flush();
         }
 
         private Dictionary<string, string> _folderMapping = new Dictionary<string, string>();

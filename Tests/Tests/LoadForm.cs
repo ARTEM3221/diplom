@@ -110,10 +110,10 @@ namespace Tests
                 MF.PersonName = textBox1.Text; // Встановлення властивості PersonName
                 MF.FormClosed += (s, ev) =>
                 {
-                string personName = textBox1.Text;
-                string theme = MF.Theme;
-                int numberOfQuestions = MF.Questions;
-                int rightAnswers = MF.CorrectAnswers;
+                    string personName = textBox1.Text;
+                    string theme = MF.Theme;
+                    int numberOfQuestions = MF.Questions;
+                    int rightAnswers = MF.CorrectAnswers;
                     FinalForm finalForm = new FinalForm(personName, theme, numberOfQuestions, rightAnswers);
                     finalForm.Show();
                 };

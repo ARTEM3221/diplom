@@ -86,13 +86,17 @@ namespace TestsEditor
         // Метод перевірки на заповненість полів
         private bool AreFieldsFilled()
         {
-            return QwestBox.Text != "" && answ1.Text != "" && answ2.Text != "" && answ3.Text != "" && answ4.Text != "";
+            return !string.IsNullOrWhiteSpace(QwestBox.Text) &&
+                !string.IsNullOrWhiteSpace(answ1.Text) &&
+                !string.IsNullOrWhiteSpace(answ2.Text) &&
+                !string.IsNullOrWhiteSpace(answ3.Text) &&
+                !string.IsNullOrWhiteSpace(answ4.Text);
         }
 
         // Метод перевірки наявності правильних відповідей
         private bool AreRightAnswersSelected()
         {
-            return true;
+            return RightAnswersBox.CheckedItems.Count > 0;
         }
 
         // Метод запису питання та відповідей у XML
