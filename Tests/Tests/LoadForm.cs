@@ -36,7 +36,7 @@ namespace Tests
         private void LoadTests()
         {
             listBoxTests.Items.Clear();
-            string serverPath = $"http://localhost/Tests/{_selectedFolderPath}/";
+            string serverPath = $"http://localhost/{_selectedFolderPath}/";
             try
             {
                 WebRequest request = WebRequest.Create(serverPath);

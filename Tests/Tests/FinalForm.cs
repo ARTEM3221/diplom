@@ -12,6 +12,7 @@ namespace Tests
     public partial class FinalForm : Form
     {
         double Mark;
+
         // Конструктор FinalForm з обробкою результатів
         public FinalForm(string PersonName, string Theme, int NumbersOfQwest, int RightAnswers)
         {
@@ -24,7 +25,7 @@ namespace Tests
             RightLabel.Text += RightAnswers.ToString();
 
             // Розрахунок оцінки
-            Mark = mark.MarkClass.Mark(NumbersOfQwest, RightAnswers);
+            Mark = MarkClass.Mark(NumbersOfQwest, RightAnswers);
 
             MarkLabel.Text += Mark.ToString();
 
@@ -37,20 +38,20 @@ namespace Tests
         {
             using (HttpClient httpClient = new HttpClient())
             {
-                // Створення JSON-об'єкта з даними результатів
-                var data = new
-                {
-                    name,
-                    testTheme,
-                    correctAnswers,
-                    averageScore
-                };
-
-                var json = JsonConvert.SerializeObject(data);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-
                 try
                 {
+                    // Створення JSON-об'єкта з даними результатів
+                    var data = new
+                    {
+                        name,
+                        testTheme,
+                        correctAnswers,
+                        averageScore
+                    };
+
+                    var json = JsonConvert.SerializeObject(data);
+                    var content = new StringContent(json, Encoding.UTF8, "application/json");
+
                     HttpResponseMessage response = await httpClient.PostAsync("http://localhost/Result/save_result.php", content);
                     if (response.IsSuccessStatusCode)
                     {
@@ -69,7 +70,6 @@ namespace Tests
             }
         }
 
-     
         // Обробка події закриття форми
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -81,7 +81,6 @@ namespace Tests
         {
             Application.Exit();
         }
-       
 
         // Обробка події натискання кнопки "Назад"
         private void button1_Click(object sender, EventArgs e)
@@ -89,6 +88,42 @@ namespace Tests
             LoadForm loadForm = new LoadForm();
             loadForm.Show();
             this.Hide();
+        }
+
+        private void MarkLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    // Клас для розрахунку оцінки
+    public static class MarkClass
+    {
+        public static double Mark(int totalQuestions, int correctAnswers)
+        {
+            // Розрахунок оцінки на основі загальної кількості питань і правильних відповідей
+            double percentage = (double)correctAnswers / totalQuestions * 100;
+
+            if (percentage >= 90)
+            {
+                return 5.0;
+            }
+            else if (percentage >= 75)
+            {
+                return 4.0;
+            }
+            else if (percentage >= 60)
+            {
+                return 3.0;
+            }
+            else if (percentage >= 45)
+            {
+                return 2.0;
+            }
+            else
+            {
+                return 1.0;
+            }
         }
     }
 }

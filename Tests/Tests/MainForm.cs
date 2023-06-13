@@ -110,9 +110,74 @@ namespace Tests
             cbAnswer4.Checked = false;
         }
 
+        // Method to check and count the answer
+        private void CheckAnswer()
+        {
+            // Collect the selected answers
+            List<string> selectedAnswers = new List<string>();
+            if (cbAnswer1.Checked) selectedAnswers.Add(cbAnswer1.Text);
+            if (cbAnswer2.Checked) selectedAnswers.Add(cbAnswer2.Text);
+            if (cbAnswer3.Checked) selectedAnswers.Add(cbAnswer3.Text);
+            if (cbAnswer4.Checked) selectedAnswers.Add(cbAnswer4.Text);
+
+            string[] correctAnswersArray = rightAnswer.Split('|');
+
+            bool isAnswerCorrect;
+
+            if (rightAnswer == "") // If there is no correct answer
+            {
+                // If the user did not select any answers, then it is correct
+                isAnswerCorrect = selectedAnswers.Count == 0;
+            }
+            else
+            {
+                // If there are correct answers, then we check them as before
+                isAnswerCorrect = selectedAnswers.Count == correctAnswersArray.Length && selectedAnswers.All(answer => correctAnswersArray.Contains(answer));
+            }
+
+            if (isAnswerCorrect) correctAnswers++;
+
+            // Save the user's answer for the current question
+            userAnswers[currentQuestion] = string.Join("|", selectedAnswers);
+        }
+
+        // Method to restore the user's saved answer for the current question
+        private void RestoreUserAnswers(int questionIndex)
+        {
+            string[] selectedAnswers = userAnswers[questionIndex]?.Split('|');
+            cbAnswer1.Checked = selectedAnswers?.Contains(cbAnswer1.Text) ?? false;
+            cbAnswer2.Checked = selectedAnswers?.Contains(cbAnswer2.Text) ?? false;
+            cbAnswer3.Checked = selectedAnswers?.Contains(cbAnswer3.Text) ?? false;
+            cbAnswer4.Checked = selectedAnswers?.Contains(cbAnswer4.Text) ?? false;
+        }
+
+
         // Handle the event of clicking the "Next" button
         private void btnNext_Click(object sender, EventArgs e)
         {
+            // Check and count the answer
+            CheckAnswer();
+
+            if (currentQuestion < questions.Count - 1)
+            {
+                // Increase the current question index and display the next question
+                currentQuestion++;
+                DisplayQuestion(currentQuestion);
+
+                // Restore the user's saved answer for the current question
+                RestoreUserAnswers(currentQuestion);
+
+                // Disable the "Next" button if this is the last question
+                btnNext.Enabled = currentQuestion < questions.Count - 1;
+            }
+            else
+            {
+                // If it was the last question, then finish the test
+                EndTest();
+            }
+
+            // Enable the "Back" button if the user is no longer on the first question
+            backButton.Enabled = currentQuestion > 0;
             // Collect the selected answers
             List<string> selectedAnswers = new List<string>();
             if (cbAnswer1.Checked) selectedAnswers.Add(cbAnswer1.Text);
@@ -156,16 +221,19 @@ namespace Tests
         {
             if (currentQuestion > 0)
             {
+                // Decrease the current question index and display the previous question
                 currentQuestion--;
                 DisplayQuestion(currentQuestion);
 
                 // Restore the user's saved answer for the current question
-                string[] selectedAnswers = userAnswers[currentQuestion].Split('|');
-                cbAnswer1.Checked = selectedAnswers.Contains(cbAnswer1.Text);
-                cbAnswer2.Checked = selectedAnswers.Contains(cbAnswer2.Text);
-                cbAnswer3.Checked = selectedAnswers.Contains(cbAnswer3.Text);
-                cbAnswer4.Checked = selectedAnswers.Contains(cbAnswer4.Text);
+                RestoreUserAnswers(currentQuestion);
+
+                // Disable the "Back" button if the user is back at the first question
+                backButton.Enabled = currentQuestion > 0;
             }
+
+            // Enable the "Next" button if the user is no longer on the last question
+            btnNext.Enabled = currentQuestion < questions.Count - 1;
         }
 
         private async void StartTimer(TimeSpan duration, CancellationToken cancellationToken)
