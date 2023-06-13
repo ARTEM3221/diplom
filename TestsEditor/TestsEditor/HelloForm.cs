@@ -14,6 +14,7 @@ namespace TestsEditor
     public partial class HelloForm : Form
     {
         XmlTextWriter testWriter;
+
         public HelloForm()
         {
             InitializeComponent();
@@ -40,6 +41,9 @@ namespace TestsEditor
         }
 
         // Обробник події кліку на кнопку "Далі"
+        // Обробник події кліку на кнопку "Далі"
+        // Обробник події кліку на кнопку "Далі"
+        // Обробник події кліку на кнопку "Далі"
         private async void NextButton_Click(object sender, EventArgs e)
         {
             if (comboBoxFolders.Text != "" && ThemeBox.Text != "" && NameBox.Text != "")
@@ -59,6 +63,12 @@ namespace TestsEditor
                             await SaveTestToServer(testXml, comboBoxFolders.Text, NameBox.Text);
                         }
                     }
+
+                    // Очищення полів
+                    ClearFields();
+
+                    // Очищення comboBoxFolders
+                    comboBoxFolders.Text = "";
                 }
                 catch (Exception ex)
                 {
@@ -70,6 +80,9 @@ namespace TestsEditor
                 MessageBox.Show("Заповніть всі поля!", "Помилка!");
             }
         }
+
+
+
 
         // Метод створення XML з тестом
         private void CreateTestXml(MemoryStream ms)
@@ -101,6 +114,17 @@ namespace TestsEditor
             testWriter.WriteEndDocument();
             testWriter.Flush();
         }
+
+        // Метод очищення полів 
+        private void ClearFields()
+        {
+            ThemeBox.Clear();
+            NumQwBox.Value = 1;
+            DurationBox.Value = 0;
+            comboBoxFolders.Items.Clear(); // Очистити елементи комбо-бокса
+            NameBox.Clear();
+        }
+
 
         private Dictionary<string, string> _folderMapping = new Dictionary<string, string>();
 
