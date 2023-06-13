@@ -92,7 +92,7 @@ namespace TestsEditor
         // Метод перевірки наявності правильних відповідей
         private bool AreRightAnswersSelected()
         {
-            return RightAnswersBox.CheckedItems.Count > 0;
+            return true;
         }
 
         // Метод запису питання та відповідей у XML

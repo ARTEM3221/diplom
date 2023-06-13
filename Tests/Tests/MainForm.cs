@@ -121,34 +121,29 @@ namespace Tests
             if (cbAnswer4.Checked) selectedAnswers.Add(cbAnswer4.Text);
 
             string[] correctAnswersArray = rightAnswer.Split('|');
-            bool isAnswerCorrect = selectedAnswers.Count == correctAnswersArray.Length && selectedAnswers.All(answer => correctAnswersArray.Contains(answer));
 
-            if (isAnswerCorrect) correctAnswers++;
+            bool isAnswerCorrect;
 
-            userAnswers[currentQuestion] = string.Join("|", selectedAnswers);
-
-            currentQuestion++;
-
-            if (currentQuestion < questions.Count)
+            if (rightAnswer == "") // If there is no correct answer
             {
-                DisplayQuestion(currentQuestion);
+                // If the user did not select any answers, then it is correct
+                isAnswerCorrect = selectedAnswers.Count == 0;
             }
             else
             {
-                string personName = PersonName;
-
-                FinalForm finalForm = new FinalForm(personName, TestTheme, questions.Count, correctAnswers);
-                finalForm.Show();
-                this.Hide();
+                // If there are correct answers, then we check them as before
+                isAnswerCorrect = selectedAnswers.Count == correctAnswersArray.Length && selectedAnswers.All(answer => correctAnswersArray.Contains(answer));
             }
+
+            if (isAnswerCorrect) correctAnswers++;
         }
 
-        #region Exit
+       
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-        #endregion
+       
 
         // Handle the event of clicking the "Exit" button
         private void button1_Click_1(object sender, EventArgs e)

@@ -60,7 +60,7 @@ namespace Tests
                 _selectedTestFilePath = $"{_selectedFolderPath}/{listBoxTests.SelectedItem}";
             }
             buttonRunTest.Enabled = listBoxTests.SelectedItem != null;
-            string testUrl = $"http://localhost/Tests/{_selectedFolderPath}/{listBoxTests.SelectedItem}";
+            string testUrl = $"http://localhost/{_selectedFolderPath}/{listBoxTests.SelectedItem}";
             string testTheme = "";
             using (HttpClient httpClient = new HttpClient())
             {
@@ -105,7 +105,7 @@ namespace Tests
                 MessageBox.Show("Введіть ваше ім'я!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                string xmlPath = $"http://localhost/Tests/{comboBoxFolders.Text}/{listBoxTests.Text}";
+                string xmlPath = $"http://localhost/{comboBoxFolders.Text}/{listBoxTests.Text}";
                 MainForm MF = new MainForm(xmlPath);
                 MF.PersonName = textBox1.Text; // Встановлення властивості PersonName
                 MF.FormClosed += (s, ev) =>
@@ -128,7 +128,7 @@ namespace Tests
         private void LoadFolders()
         {
             comboBoxFolders.Items.Clear();
-            string serverPath = "http://localhost/Tests/";
+            string serverPath = "http://localhost/";
             try
             {
                 WebRequest request = WebRequest.Create(serverPath);

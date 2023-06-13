@@ -51,7 +51,7 @@ namespace Tests
 
                 try
                 {
-                    HttpResponseMessage response = await httpClient.PostAsync("http://localhost/Tests/Result/save_result.php", content);
+                    HttpResponseMessage response = await httpClient.PostAsync("http://localhost/Result/save_result.php", content);
                     if (response.IsSuccessStatusCode)
                     {
                         var responseContent = await response.Content.ReadAsStringAsync();
@@ -69,7 +69,7 @@ namespace Tests
             }
         }
 
-        #region Exit
+     
         // Обробка події закриття форми
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -81,7 +81,7 @@ namespace Tests
         {
             Application.Exit();
         }
-        #endregion
+       
 
         // Обробка події натискання кнопки "Назад"
         private void button1_Click(object sender, EventArgs e)

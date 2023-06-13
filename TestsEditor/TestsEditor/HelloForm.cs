@@ -32,7 +32,7 @@ namespace TestsEditor
                 content.Add(new StringContent(directory), "directory");
                 content.Add(new StringContent(testName), "testName");
 
-                var response = await client.PostAsync("http://localhost/Tests/save_test.php", content);
+                var response = await client.PostAsync("http://localhost/save_test.php", content);
 
                 if (!response.IsSuccessStatusCode)
                 {
@@ -110,7 +110,7 @@ namespace TestsEditor
         private void LoadFolders()
         {
             comboBoxFolders.Items.Clear();
-            string serverPath = "http://localhost/Tests/";
+            string serverPath = "http://localhost/";
             try
             {
                 WebRequest request = WebRequest.Create(serverPath);
