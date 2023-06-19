@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test>
+  <Theme>іавіаві</Theme>
+  <qw numbers="1">
+    <q1 text="вава" right="віа">
+      <answers>віа|іва|віавіа|віа</answers>
+    </q1>
+  </qw>
+  <Duration>1</Duration>
+</test>

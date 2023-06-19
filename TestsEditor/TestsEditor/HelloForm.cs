@@ -43,7 +43,6 @@ namespace TestsEditor
         // Обробник події кліку на кнопку "Далі"
         // Обробник події кліку на кнопку "Далі"
         // Обробник події кліку на кнопку "Далі"
-        // Обробник події кліку на кнопку "Далі"
         private async void NextButton_Click(object sender, EventArgs e)
         {
             if (comboBoxFolders.Text != "" && ThemeBox.Text != "" && NameBox.Text != "")
@@ -66,9 +65,6 @@ namespace TestsEditor
 
                     // Очищення полів
                     ClearFields();
-
-                    // Очищення comboBoxFolders
-                    comboBoxFolders.Text = "";
                 }
                 catch (Exception ex)
                 {
@@ -80,7 +76,6 @@ namespace TestsEditor
                 MessageBox.Show("Заповніть всі поля!", "Помилка!");
             }
         }
-
 
 
 
@@ -115,16 +110,15 @@ namespace TestsEditor
             testWriter.Flush();
         }
 
-        // Метод очищення полів 
+        // Метод очищення полів
         private void ClearFields()
         {
             ThemeBox.Clear();
             NumQwBox.Value = 1;
             DurationBox.Value = 0;
-            comboBoxFolders.Items.Clear(); // Очистити елементи комбо-бокса
+            comboBoxFolders.Items.Clear();
             NameBox.Clear();
         }
-
 
         private Dictionary<string, string> _folderMapping = new Dictionary<string, string>();
 
